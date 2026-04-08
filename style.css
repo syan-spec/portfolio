@@ -1,0 +1,622 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --text-dark: #ffffff;
+  --card-dark: #111;
+  --accent-dark: #00FFFF;
+  
+  
+  
+
+  --bg-light: #eaebe9f1;
+  --text-light: #111;
+  --card-light: #ffffff;
+  --accent-light: #0077ff;
+  
+  
+}
+
+
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #000000;
+  color: #00FFFF;
+  border: 1px solid #00FFFF;
+  padding: 10px 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+#theme-toggle:hover {
+  background: #00FFFF;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+/* LIGHT MODE */
+.light-mode {
+  background: #f5f5f5;
+  color: black;
+}
+
+.light-mode .card,
+.light-mode .project-card,
+.light-mode .skill-card {
+  background: white;
+  color: black;
+}
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  margin: 0;
+  background-color: #0a0a0a;
+
+  /* background-image: 
+    linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+
+  background-size: 40px 40px; */
+
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+
+.hero-left h1 {
+  font-size: 2.5rem;
+  line-height: 1.4;
+}
+
+.hero-left p {
+  margin: 20px 0;
+  color: #aaa;
+}
+
+.buttons a {
+  padding: 12px 20px;
+  margin-right: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #00FFFF;
+  color: black;
+}
+
+.btn-secondary {
+  border: 1px solid #00FFFF;
+  color: #00FFFF;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+.about {
+  padding: 100px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  gap: 50px;
+  
+}
+
+.about-text {
+  flex: 1;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.about-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.light-mode .about-text {
+  color: #4e7db7;
+}
+
+.light-mode .college {
+  color: #4e7db7;
+}
+
+.light-mode .name {
+  color: #0077ff;
+}
+
+.name {
+  font-size: 1.8rem;
+  color: #00FFFF;
+  margin-bottom: 10px;
+}
+
+.college {
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Creative Card Animation */
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,255,255,0.15);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow animation */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(120deg, transparent, rgba(0,255,255,0.2), transparent);
+  top: -50%;
+  left: -50%;
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+}
+.about-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #00FFFF;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+  transition: 0.4s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+.projects {
+  padding: 100px;
+}
+
+.projects h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD DESIGN */
+.project-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 18px;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.project-card span {
+  font-size: 0.8rem;
+  color: #00FFFF;
+}
+
+/* BENTO SIZES */
+.large {
+  grid-column: span 2;
+}
+
+.wide {
+  grid-column: span 3;
+}
+
+/* BUTTONS */
+.project-buttons a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #00FFFF;
+  color: #00FFFF;
+  font-size: 0.9rem;
+}
+
+.project-buttons a:hover {
+  background: #00FFFF;
+  color: black;
+}
+
+/* HOVER EFFECT */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+}
+.project-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+.project-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.skills {
+  padding: 100px;
+}
+
+.skills h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.skill-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.4s;
+  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+/* PROGRESS BAR */
+.progress {
+  background: #222;
+  height: 8px;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: #00FFFF;
+  width: 0;
+  animation: fillBar 1.5s forwards;
+}
+
+/* ANIMATION */
+@keyframes fillBar {
+  from { width: 0; }
+}
+.skill-card:nth-child(1) span { animation-delay: 0.2s; }
+.skill-card:nth-child(2) span { animation-delay: 0.4s; }
+.skill-card:nth-child(3) span { animation-delay: 0.6s; }
+.skill-card:nth-child(4) span { animation-delay: 0.8s; }
+.skill-card:nth-child(5) span { animation-delay: 1s; }
+.skill-card:nth-child(6) span { animation-delay: 1.2s; }
+.contact {
+  padding: 100px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #00FFFF;
+  color: #00FFFF;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* HOVER GLOW */
+.contact-btn:hover {
+  background: #00FFFF;
+  color: black;
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.light-mode {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.light-mode .card,
+.light-mode .project-card,
+.light-mode .skill-card {
+  background: var(--card-light);
+  color: var(--text-light);
+}
+
+/* Fix accent color */
+.light-mode .btn-primary,
+.light-mode .contact-btn {
+  background: var(--accent-light);
+  color: white;
+}
+
+.light-mode .btn-secondary {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+}
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,255,0.08), transparent 70%);
+  animation: moveBg 25s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  from {
+    transform: translate(-20%, -20%);
+  }
+  to {
+    transform: translate(20%, 20%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about {
+    padding: 40px 20px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .large,
+  .wide {
+    grid-column: span 1;
+  }
+
+  .projects {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact {
+    padding: 40px 20px;
+  }
+}
+
+button, a {
+  min-height: 44px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Base Button */
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+/* Primary Button (Download CV) */
+.primary-btn {
+  background: #00FFFF;
+  color: #0a0a0a;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px #00ffff80;
+}
+
+/* Secondary Button (Certificates) */
+.secondary-btn {
+  border: 1px solid #00FFFF;
+  color: #00FFFF;
+}
+
+.secondary-btn:hover {
+  background: #00FFFF;
+  color: #0a0a0a;
+}
+
+.light-mode .primary-btn {
+  background: #0077ff;
+  color: white;
+}
+
+.light-mode .primary-btn:hover {
+  box-shadow: 0 0 15px #0077ff80;
+}
+
+.light-mode .secondary-btn {
+  border: 1px solid #0077ff;
+  color: #0077ff;
+}
+
+.light-mode .secondary-btn:hover {
+  background: #0077ff;
+  color: white;
+}
+
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.cert-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* .resume-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  
+
+  color: #0a0a0a;
+  background: #00FFFF;
+
+  transition: all 0.3s ease;
+}
+
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00ffff80;
+}
+
+
+.light-mode .resume-btn {
+  background: #0077ff;
+  color: white;
+}
+
+.light-mode .resume-btn:hover {
+  box-shadow: 0 0 20px #0077ff80;
+} 
+*/
