@@ -20,7 +20,7 @@ I am a CSE student focused on building strong fundamentals in programming and so
 ##  Tech Stack
 
 -  Quick larner 
--  C, JAVA, Python,C++  
+-  C, Python,C++  
 -  Placement focus
 -  Strong Fundamental
 
